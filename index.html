@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayush's Interactive Profile</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+        .card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+        h1 { color: #58a6ff; margin-bottom: 5px; }
+        p { color: #8b949e; line-height: 1.5; }
+        .btn {
+            background-color: #238636;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        .btn:hover { background-color: #2ea043; }
+        #quiz-box { display: none; margin-top: 20px; }
+        .opt-btn {
+            background-color: #21262d;
+            color: #58a6ff;
+            border: 1px solid #30363d;
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>👋 Hey, I'm Ayush!</h1>
+        <p>COPA & ADCA Student | Tech & Coding Enthusiast</p>
+        <p>Welcome to my interactive GitHub space. I build cool scripts and web tools!</p>
+        <button class="btn" onclick="startQuiz()">Play Quick Tech Quiz 🚀</button>
+
+        <div id="quiz-box">
+            <h3 id="question">What does HTML stand for?</h3>
+            <button class="opt-btn" onclick="checkAns(true)">HyperText Markup Language</button>
+            <button class="opt-btn" onclick="checkAns(false)">HighText Machine Language</button>
+            <p id="result" style="font-weight: bold;"></p>
+        </div>
+    </div>
+
+    <script>
+        function startQuiz() {
+            document.getElementById('quiz-box').style.display = 'block';
+        }
+        function checkAns(isCorrect) {
+            let res = document.getElementById('result');
+            if(isCorrect) {
+                res.style.color = '#3fb950';
+                res.innerHTML = "Correct! 🎉 You know your web basics.";
+            } else {
+                res.style.color = '#f85149';
+                res.innerHTML = "Oops! Try again. ❌";
+            }
+        }
+    </script>
+</body>
+</html>
